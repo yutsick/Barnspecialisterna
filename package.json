@@ -1,0 +1,29 @@
+{
+  "name": "barnspecialisterna",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yutsick/Barnspecialisterna.git"
+  },
+  "author": "Taras Yurchyshyn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yutsick/Barnspecialisterna/issues"
+  },
+  "homepage": "https://github.com/yutsick/Barnspecialisterna#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.10",
+    "gulp": "^4.0.2",
+    "gulp-file-include": "^2.3.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.55.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.2"
+  }
+}
