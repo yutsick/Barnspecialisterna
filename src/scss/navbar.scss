@@ -1,0 +1,22 @@
+// ------ Navbar ---------//
+.topbar {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(40px);
+  border-radius: 0px 0px 10px 10px;
+  padding: 15px 97px 15px 150px;
+  z-index: 99999;
+}
+
+#navbarNav {
+  a {
+    text-transform: uppercase;
+    font: 400 16px/1.25em var(--m);
+    color: #fff;
+
+    &.active,
+    &:hover {
+      font: 600 16px/1.25em var(--m);
+      color: #fff;
+    }
+  }
+}

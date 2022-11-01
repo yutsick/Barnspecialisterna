@@ -11489,6 +11489,68 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.topbar {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(40px);
+  border-radius: 0px 0px 10px 10px;
+  padding: 15px 97px 15px 150px;
+  z-index: 99999;
+}
+
+#navbarNav a {
+  text-transform: uppercase;
+  font: 400 16px/1.25em var(--m);
+  color: #fff;
+}
+#navbarNav a.active, #navbarNav a:hover {
+  font: 600 16px/1.25em var(--m);
+  color: #fff;
+}
+
+footer {
+  margin-top: 160px;
+}
+footer .main-bg {
+  background: var(--secondary);
+  padding: 50px 0;
+}
+footer p {
+  font: 400 18px/1.5em var(--m);
+  display: flex;
+}
+footer h3, footer .h3 {
+  font: 400 22px/1.5em var(--m);
+  margin-bottom: 13px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+footer h3::after, footer .h3::after {
+  content: url("../img/wave.svg");
+  width: 75px;
+  display: block;
+  margin-top: -12px;
+}
+footer .sch-r::before {
+  content: url("../img/icon-right-schevron.svg");
+  margin-right: 15px;
+  margin-top: 3px;
+}
+footer .addr::before {
+  content: url("../img/icon-pin.svg");
+}
+footer .phone::before {
+  content: url("../img/icon-phone.svg");
+}
+footer .fax::before {
+  content: url("../img/icon-fax.svg");
+}
+footer .calendar::before {
+  content: url("../img/icon-calendar.svg");
+}
+footer .space-68 {
+  height: 68px;
+}
+
 :root {
   --base: #3AB0BF;
   --secondary: #C0E6EA;
@@ -11498,7 +11560,7 @@ textarea.form-control-lg {
   --r: "Roboto", sans-serif ;
 }
 
-footer .calendar::before, footer .fax::before, footer .phone::before, footer .addr::before {
+footer .addr::before, footer .phone::before, footer .fax::before, footer .calendar::before {
   margin-right: 15px;
   display: block;
   margin-top: 5px;
@@ -11538,24 +11600,6 @@ button.main {
   text-align: center;
   padding: 16px 23px;
   border: none;
-}
-
-.topbar {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(40px);
-  border-radius: 0px 0px 10px 10px;
-  padding: 15px 97px 15px 150px;
-  z-index: 99999;
-}
-
-#navbarNav a {
-  text-transform: uppercase;
-  font: 400 16px/1.25em var(--m);
-  color: #fff;
-}
-#navbarNav a.active, #navbarNav a:hover {
-  font: 600 16px/1.25em var(--m);
-  color: #fff;
 }
 
 #homepage {
@@ -11659,48 +11703,4 @@ button.main {
 #homepage section.cert .cert-img {
   margin-bottom: 115px;
   margin-top: 42px;
-}
-
-footer {
-  margin-top: 160px;
-}
-footer .main-bg {
-  background: var(--secondary);
-  padding: 50px 0;
-}
-footer p {
-  font: 400 18px/1.5em var(--m);
-  display: flex;
-}
-footer h3, footer .h3 {
-  font: 400 22px/1.5em var(--m);
-  margin-bottom: 13px;
-  display: inline-block;
-  text-transform: uppercase;
-}
-footer h3::after, footer .h3::after {
-  content: url("../img/wave.svg");
-  width: 75px;
-  display: block;
-  margin-top: -12px;
-}
-footer .sch-r::before {
-  content: url("../img/icon-right-schevron.svg");
-  margin-right: 15px;
-  margin-top: 3px;
-}
-footer .addr::before {
-  content: url("../img/icon-pin.svg");
-}
-footer .phone::before {
-  content: url("../img/icon-phone.svg");
-}
-footer .fax::before {
-  content: url("../img/icon-fax.svg");
-}
-footer .calendar::before {
-  content: url("../img/icon-calendar.svg");
-}
-footer .space-68 {
-  height: 68px;
 }

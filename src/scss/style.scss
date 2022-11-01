@@ -1,4 +1,6 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
+@import 'navbar.scss';
+@import 'footer.scss';
 
 :root {
   --base: #3AB0BF;
@@ -51,28 +53,7 @@ button.main {
   border: none;
 }
 
-// ------ Navbar ---------//
-.topbar {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(40px);
-  border-radius: 0px 0px 10px 10px;
-  padding: 15px 97px 15px 150px;
-  z-index: 99999;
-}
 
-#navbarNav {
-  a {
-    text-transform: uppercase;
-    font: 400 16px/1.25em var(--m);
-    color: #fff;
-
-    &.active,
-    &:hover {
-      font: 600 16px/1.25em var(--m);
-      color: #fff;
-    }
-  }
-}
 
 // --------- page Home ----------//
 #homepage {
@@ -209,66 +190,5 @@ button.main {
       margin-top: 42px;
     }
 
-  }
-}
-
-//-----footer-------//
-
-footer {
-  margin-top: 160px;
-
-  .main-bg {
-    background: var(--secondary);
-    padding: 50px 0;
-
-  }
-
-  p {
-    font: 400 18px/1.5em var(--m);
-    display: flex;
-  }
-
-  h3 {
-    font: 400 22px/1.5em var(--m);
-    margin-bottom: 13px;
-    display: inline-block;
-    text-transform: uppercase;
-
-    &::after {
-      content: url('../img/wave.svg');
-      width: 75px;
-      display: block;
-      margin-top: -12px;
-    }
-  }
-
-  .sch-r::before {
-    content: url('../img/icon-right-schevron.svg');
-    margin-right: 15px;
-    margin-top: 3px;
-  }
-
-  .addr::before {
-    content: url('../img/icon-pin.svg');
-    @extend %icon;
-  }
-
-  .phone::before {
-    content: url('../img/icon-phone.svg');
-    @extend %icon;
-  }
-
-  .fax::before {
-    content: url('../img/icon-fax.svg');
-    @extend %icon;
-  }
-
-  .calendar::before {
-    content: url('../img/icon-calendar.svg');
-    @extend %icon;
-  }
-
-  .space-68 {
-    height: 68px;
   }
 }
