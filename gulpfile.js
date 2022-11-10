@@ -34,7 +34,7 @@ let { src, dest } = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   group_media = require('gulp-group-css-media-queries'),
   clean_css = require('gulp-clean-css'),
-  rename_css = require('gulp-rename');
+  rename_css = require('gulp-rename'); // rename main css file to .min version
 
 function browserSync(params) {
   browsersync.init({
@@ -83,15 +83,24 @@ function css() {
     .pipe(browsersync.stream());
 }
 
+function js() {
+  return src(path.src.js)
+    .pipe(fileinclude())
+    .pipe(dest(path.build.js))
+    .pipe(browsersync.stream());
+}
+
 function watchFiles(params) {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.css], css);
+  gulp.watch([path.watch.js], js);
   gulp.watch([path.watch.img], img);
 }
 
-let build = gulp.series(gulp.parallel(html, css, img));
+let build = gulp.series(gulp.parallel(js, html, css, img));
 let watch = gulp.parallel(build, browserSync, watchFiles);
 
+exports.js = js;
 exports.html = html;
 exports.css = css;
 exports.img = img;
