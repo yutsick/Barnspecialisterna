@@ -10,13 +10,13 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
   <title>Document</title>
 </head>
 
 <body>
   <header>
-    <div class="container-fluid topbar position-absolute">
+    <div class="container-fluid topbar ">
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid p-0">
           <div class="logo">
@@ -90,7 +90,7 @@
   <section class="contacts">
     <div class="container">
       <div class="row text-white justify-content-center text-center g-6">
-        <div class="col-md-6 d-flex">
+        <div class="col-md-6 d-flex ">
           <div class="color-block">
             <h3>TELEFON</h3>
             <hr>
@@ -166,21 +166,19 @@
 
   </section>
   <section class="form">
-    <div class="container">
-      <div class="row">
-        <div class="getemail">
-          <form action="" class="d-flex justify-content-between">
-            <input type="text" placeholder="Your email">
-            <input type="submit" value="Skicka">
+    <div class="row">
+      <div class="getemail">
+        <form action="" class="d-flex justify-content-between">
+          <input type="text" placeholder="Your email">
+          <input type="submit" value="Skicka">
 
-          </form>
-        </div>
-
+        </form>
       </div>
+
     </div>
   </section>
   <section class="cert">
-    <div class="container-fluid bg-cert">
+    <div class="container-fluid bg-cert bg-right" style="background-image: url(../img/home_baby_img.jpg);">
       <div class="container">
         <div class="row text">
           <div class="col-md-6">
@@ -236,6 +234,31 @@
     </div>
   </div>
 </footer>
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 90) {
+        
+        document.querySelector('.topbar').classList.add('fixed-top');
+        document.querySelector('.topbar').style.opacity = 0;
+
+
+
+        navbar_height = document.querySelector('.topbar').offsetHeight;
+        document.body.style.paddingTop = navbar_height + 'px';
+        document.querySelector('.topbar').style.transition = "all 0.2s"
+        document.querySelector('.topbar').style.opacity = 1;
+
+      } else {
+        document.querySelector('.topbar').classList.remove('fixed-top');
+        // remove padding top from body
+        document.body.style.paddingTop = '0'; document.querySelector('.topbar').style.opacity = 1;
+      }
+    });
+  }); 
+</script>
 </body>
 
 </html>

@@ -30,6 +30,31 @@
     </div>
   </div>
 </footer>
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 90) {
+        
+        document.querySelector('.topbar').classList.add('fixed-top');
+        document.querySelector('.topbar').style.opacity = 0;
+
+
+
+        navbar_height = document.querySelector('.topbar').offsetHeight;
+        document.body.style.paddingTop = navbar_height + 'px';
+        document.querySelector('.topbar').style.transition = "all 0.2s"
+        document.querySelector('.topbar').style.opacity = 1;
+
+      } else {
+        document.querySelector('.topbar').classList.remove('fixed-top');
+        // remove padding top from body
+        document.body.style.paddingTop = '0'; document.querySelector('.topbar').style.opacity = 1;
+      }
+    });
+  }); 
+</script>
 </body>
 
 </html>

@@ -1,6 +1,17 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
+@import 'page.scss';
 @import 'navbar.scss';
 @import 'footer.scss';
+
+.container {
+  padding: 0 100px;
+}
+
+
+
+.mt120 {
+  margin-top: 120px;
+}
 
 :root {
   --base: #3AB0BF;
@@ -8,7 +19,8 @@
   --text: #333C4E;
   --m: 'Montserrat', sans-serif;
   --ss: 'Source Sans Pro', sans-serif;
-  --r: 'Roboto', sans-serif
+  --r: 'Roboto', sans-serif;
+
 }
 
 %icon {
@@ -17,19 +29,100 @@
   margin-top: 5px;
 }
 
+%top-title {
+  background-color: rgba(15, 14, 14, 0.3);
+
+  .top-txt {
+    text-align: center;
+    color: #fff;
+
+    max-width: 1028px;
+
+    h1 {
+      font: 700 56px/1.25em var(--ss);
+    }
+
+    .sub-title {
+      margin-top: 50px;
+      font: 500 28px/1.5em var(--m)
+    }
+
+    button {
+      margin-top: 40px;
+    }
+  }
+}
+
+%color-block {
+  display: inline-block;
+  background-color: var(--base);
+  border-radius: 20px;
+  padding: 30px;
+}
+
+%getemail {
+  max-width: 927px;
+  border-radius: 10px;
+  background-color: var(--secondary);
+  margin: 0 auto;
+  padding: 10px 10px 10px 28px;
+}
+
+%chevron-list {
+  ul {
+    max-width: 500px;
+    list-style-type: none;
+  }
+
+  li {
+    border-bottom: solid 1px var(--secondary);
+    padding: 20px 0;
+
+    &::before {
+      content: url('../img/icon-bottom-schevron-black.svg');
+      margin-right: 26px;
+      margin-top: 3px;
+    }
+  }
+}
+
+input[type=text] {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+input[type=submit] {
+  color: var(--secondary);
+  background-color: var(--base);
+  padding: 12px 77px;
+  border-radius: 10px;
+  border: none;
+}
+
 img {
   width: 100%;
   display: block;
 }
 
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  font: 400 24px/1.5em var(--ss);
+  color: var(--text);
+}
+
 h2 {
   font: 700 36px/1.5em var(--ss);
+  color: var(--text);
   display: inline-block;
 }
 
 h2::after {
   content: url('../img/wave.svg');
-  width: 275px;
   display: block;
   margin-top: -26px;
 }
@@ -42,7 +135,12 @@ p {
   font: 400 22px/1.5em var(--m)
 }
 
-button.main {
+a {
+  text-decoration: none;
+}
+
+button.main,
+button.main-wide {
   font: 700 18px/1.5em var(--m);
   background-color: var(--base);
   color: #fff;
@@ -53,35 +151,39 @@ button.main {
   border: none;
 }
 
+button.main-wide {
+  padding: 12px 77px;
+}
 
+
+.form {
+  @extend %getemail;
+}
+
+section.info {
+  margin-top: 120px;
+
+  .shadow {
+    margin: 30px 110px;
+    box-shadow: 0px 0px 20px rgba(51, 60, 78, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+
+    ul {
+      font: 600 22px/2.2em var(--m)
+    }
+  }
+}
 
 // --------- page Home ----------//
 #homepage {
   color: var(--text);
 
   section.top {
-    .top-title {
-      background-color: rgba(15, 14, 14, 0.3);
+    @extend %top-title;
 
-      .top-txt {
-        text-align: center;
-        color: #fff;
-        text-transform: uppercase;
-        max-width: 1028px;
-
-        h1 {
-          font: 700 56px/1.25em var(--ss);
-        }
-
-        .sub-title {
-          margin-top: 50px;
-          font: 500 28px/1.5em var(--m)
-        }
-
-        button {
-          margin-top: 40px;
-        }
-      }
+    .top-txt {
+      text-transform: uppercase;
     }
 
     .top-right-box {
@@ -103,6 +205,8 @@ button.main {
     }
   }
 
+
+
   //--------end section Top ---- //
 
   // ----------section contacts ------//
@@ -111,42 +215,20 @@ button.main {
     margin-top: 120px;
 
     .color-block {
-      display: inline-block;
-      background-color: var(--base);
-      border-radius: 20px;
-      padding: 30px;
+      @extend %color-block;
     }
   }
 
   // ----------end section contacts ------//
 
   // ----------section info ------//
-  section.info {
-    margin-top: 120px;
 
-    .shadow {
-      margin: 30px 110px;
-      box-shadow: 0px 0px 20px rgba(51, 60, 78, 0.1);
-      border-radius: 20px;
-      padding: 40px;
-
-      ul {
-        font: 600 22px/2.2em var(--m)
-      }
-    }
-  }
 
   //-------section form ----------------//
   section.form {
     margin-top: 100px;
 
-    .getemail {
-      max-width: 927px;
-      border-radius: 10px;
-      background-color: var(--secondary);
-      margin: 0 auto;
-      padding: 10px 10px 10px 28px;
-    }
+    @extend %getemail;
 
     ::placeholder {
       font: 400px 22px/1.15em var(--r);
@@ -172,8 +254,12 @@ button.main {
     margin-top: 100px;
 
     .bg-cert {
-      background: url('../img/home_baby_img.jpg') right top no-repeat;
+      background-repeat: no-repeat;
       background-size: contain;
+    }
+
+    .bg-right {
+      background-position: right;
     }
 
     h2 {

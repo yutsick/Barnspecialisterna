@@ -1,0 +1,178 @@
+.form-phone::before {
+  content: url('../img/icon-phone-white.svg');
+  @extend %icon;
+}
+
+.form-email::before {
+  content: url('../img/icon-letter-white.svg');
+  @extend %icon;
+}
+
+.form-address::before {
+  content: url('../img/icon-pin-white.svg');
+  @extend %icon;
+}
+
+#page {
+  section.top {
+    @extend %top-title;
+
+
+  }
+
+  section.text_with_feature {
+    margin-top: 160px;
+
+    .color-block {
+      @extend %color-block;
+    }
+  }
+
+  section.chevron-list {
+    margin-top: 100px;
+
+    @extend %chevron-list;
+  }
+
+  section.title {
+    margin-top: 120px;
+    margin-bottom: 60px;
+  }
+
+  section.contact_form {
+    .container {
+      background: var(--base);
+      border-radius: 20px;
+      padding: 50px 130px;
+    }
+
+    p {
+      max-width: 927px;
+      margin: 0 auto;
+      font: 600 24px/ 1.5em var(--m);
+      margin-bottom: 15px;
+    }
+
+    p[class*="form-"] {
+      font: 400 22px/1.5em var(--m);
+    }
+  }
+
+  section.small-form {
+    margin-top: 50px;
+  }
+
+  section.vacancies {
+    .accordion-item {
+      margin: 15px 0;
+      background-color: #fff;
+      box-shadow: 0px 0px 20px rgba(51, 60, 78, 0.1);
+      border-radius: 20px;
+    }
+
+    button.accordion-button {
+      padding: 40px 40px 20px;
+      color: var(--text);
+      font: 700 34px/1.5em var(--m);
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: none;
+
+      &::after {
+        width: 56px;
+        height: 30px;
+      }
+
+      &.collapsed {
+        padding: 40px;
+      }
+    }
+
+
+  }
+
+  section.benefits {
+
+
+    .benefits-items {
+      margin: 70px 116px 50px;
+    }
+
+    .benefits_item {
+
+      .benefits_img {
+        width: 100px;
+        margin: 0 auto;
+
+        img {
+          height: 100px;
+          object-fit: cover;
+        }
+      }
+
+      h3 {
+        font: 700 24px/1.5em var(--ss);
+        color: var(--base);
+        margin: 20px 0 10px;
+      }
+
+      .benefits_text {
+        font: 400 18px/25.2px var(--ss);
+        color: var(--text);
+      }
+    }
+  }
+
+  section.two_features {
+
+    margin-top: 40px;
+
+    .color-block {
+      @extend %color-block;
+    }
+
+  }
+
+  section.text_image {
+    .bg-img {
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .bg-left {
+      background-position: left;
+    }
+
+    .bg-right {
+      background-position: right;
+    }
+
+    p {
+      font: 400 24px/1.5em var(--ss);
+      margin-bottom: 2rem;
+    }
+
+    .chevron-list {
+      @extend %chevron-list;
+    }
+
+  }
+
+  section.text {
+    .wave {
+      padding-top: 100px;
+      background-color: var(--base);
+      //mask: var(--mask);
+
+    }
+
+    .wave-clip {
+      display: block;
+      width: 100%;
+      mask-image: url(../img/clip.png);
+      content: "";
+      height: 195px;
+      background-color: var(--base);
+    }
+  }
+}

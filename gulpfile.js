@@ -30,7 +30,11 @@ let { src, dest } = require('gulp'),
   gulp = require('gulp'),
   browsersync = require("browser-sync").create(),
   fileinclude = require("gulp-file-include"),
-  scss = require('gulp-sass')(require('sass'));
+  scss = require('gulp-sass')(require('sass')),
+  autoprefixer = require('gulp-autoprefixer'),
+  group_media = require('gulp-group-css-media-queries'),
+  clean_css = require('gulp-clean-css'),
+  rename_css = require('gulp-rename');
 
 function browserSync(params) {
   browsersync.init({
@@ -62,6 +66,19 @@ function css() {
         outputStyle: "expanded"
       })
     )
+    .pipe(autoprefixer({
+      overrideBrowserslist: ['last 5 versions'],
+      cascade: true
+    }))
+    .pipe(
+      group_media()
+    )
+    .pipe(clean_css())
+    .pipe(
+      rename_css({
+        extname: ".min.css"
+      })
+      )
     .pipe(dest(path.build.css))
     .pipe(browsersync.stream());
 }
